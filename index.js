@@ -8,9 +8,9 @@ const dbPath = path.join(__dirname, "goodreads.db");
 
 let db = null;
 
-const initializeDataBase = () => {
+const initializeDataBase = async () => {
   try {
-    db = open({
+    db = await open({
       filename: dbPath,
       driver: sqlite3.Database,
     });
